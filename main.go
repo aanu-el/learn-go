@@ -2,27 +2,26 @@ package main
 
 import (
 	"fmt"
-	"strings"
-);
-
-func getInitials(n string) (string, string) {
-	fullName := strings.ToUpper(n)
-	namesArr := strings.Split(fullName, " ")
-
-	var initials []string
-
-	for _, names := range namesArr {
-		initials = append(initials, names[:1]) 
-	}
-
-	if len(initials) > 1 {
-		return initials[0], initials[1]
-	} 
-
-	return initials[0], "_"
-}
+)
 
 func main() {
-	firstName, lastName := getInitials("Peace")
-	fmt.Printf("Your initials are: %s %s \n", firstName, lastName)
+	
+	menu := map[string]float64{
+		"Burger": 5.99,
+		"Fries": 2.49,
+		"Drink": 1.99,
+	}
+
+	fmt.Println(menu)
+	fmt.Println(menu["Burger"])
+
+	phonebook := map[int]string{
+		1234567890: "Alice",
+		9876543210: "Bob",
+		5555555555: "Charlie",
+	}
+
+	for k, v := range phonebook {
+		fmt.Printf("Phone: %d, Name: %s\n", k, v)
+	}
 }
